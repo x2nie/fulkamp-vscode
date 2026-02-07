@@ -8,6 +8,14 @@
     { "include": "#scalars" }
   ],
   "repository": {
+    "colors": {
+        "patterns": [
+            {
+            "name": "constant.other.color.hex.fulkamp",
+            "match": "(?<!\\S)#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})\\b"
+            }
+        ]
+    },
     "comments": {
       "patterns": [
         {
@@ -30,7 +38,7 @@
                 "name": "entity.name.function.decorator.fulkamp"
                 }
             },
-            "end": "$"
+            "end": "($|#\\s)"
         }
       ]
     },
@@ -65,19 +73,22 @@
       "patterns": [
         {
           "name": "meta.property-line.fulkamp",
-          "begin": "^\\s*(?!@)([a-zA-Z_][\\w.-]*)",
+          "begin": "^\\s*(?!@)([#a-zA-Z_][\\/\\.\\w.-]*)",
           "beginCaptures": {
             "1": {
               "name": "variable.other.property.fulkamp"
             }
           },
-          "end": "$",
+          "end": "($|#\\s)",
           "patterns": [
+            { "include": "#comments" },
+             { "include": "#colors" },
+             { "include": "#scalars" },
             {
               "name": "variable.parameter.function.fulkamp",
-              "match": "\\b.*\\b"
+              "match": "\\b[#a-zA-Z_][\\w.-]*\\b"
             },
-            { "include": "#scalars" }
+            { "include": "#comments" }
           ]
         }
       ]
