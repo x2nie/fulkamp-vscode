@@ -6,6 +6,13 @@ vista/buttons.png                   " ← plain path (netral)
     play.h  23   0  23 18              "    angka = numeric
     play.d  46   0  23 18
 
+
+@bitmap.frame
+window/wasabi_window.png gammagroup Backgrounds
+    wasabi.window            0 0 31 60 padding 10 20 40
+    wasabi.window.nostatus 100 0 31 60 padding 10 20 20
+    
+
 @slider
 seekBar at 10 72 size 255 6
   bind seek

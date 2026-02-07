@@ -2,7 +2,7 @@
   "name": "fulkamp",
   "displayName": "FulkAmp",
   "description": "Syntax highlighting for FulkAmp",
-  "version": "0.0.1",
+  "version": "0.1.2",
   "publisher": "x2nie",
   "engines": {
     "vscode": "^1.80.0"
