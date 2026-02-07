@@ -11,7 +11,8 @@
       {
         "id": "fulkamp",
         "aliases": ["FulkAmp", "fulkamp"],
-        "extensions": [".fa", ".fulkamp"]
+        "extensions": [".fa", ".fulkamp", "fu.txt"],
+        "configuration": "./language-configuration.json"
       }
     ],
     "grammars": [
