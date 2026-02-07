@@ -23,17 +23,7 @@
           ".fulkamp",
           "fu.txt"
         ],
-        "configuration": "./language-configuration.json",
-        "symbols": {
-          "file": {
-            "regex": "^\\s*@([a-zA-Z_][\\w-]*)",
-            "kind": "module"
-          },
-          "symbol": {
-            "regex": "^(?!\\s)([a-zA-Z_][\\w./-]*)\\b",
-            "kind": "function"
-          }
-        }
+        "configuration": "./language-configuration.json"
       }
     ],
     "grammars": [
