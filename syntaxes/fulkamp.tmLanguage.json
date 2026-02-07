@@ -20,7 +20,7 @@
       "patterns": [
         {
           "name": "comment.line.number-sign.fulkamp",
-          "match": "#\\s+.*$"
+          "match": "\".*$"
         }
       ]
     },
@@ -38,7 +38,7 @@
                 "name": "entity.name.function.decorator.fulkamp"
                 }
             },
-            "end": "($|#\\s)"
+            "end": "\\s"
         }
       ]
     },
@@ -79,16 +79,15 @@
               "name": "variable.other.property.fulkamp"
             }
           },
-          "end": "($|#\\s)",
+          "end": "$",
           "patterns": [
-            { "include": "#comments" },
+              { "include": "#comments" },
              { "include": "#colors" },
              { "include": "#scalars" },
             {
               "name": "variable.parameter.function.fulkamp",
               "match": "\\b[#a-zA-Z_][\\w.-]*\\b"
-            },
-            { "include": "#comments" }
+            }
           ]
         }
       ]
