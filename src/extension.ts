@@ -16,9 +16,9 @@ export function activate(context: vscode.ExtensionContext) {
                   const decorator = line.match(/^\s*@([\w-]+)/);
                   if (decorator) {
                      const block = new vscode.DocumentSymbol(
-                        `@${decorator[1]}`,
+                        `${decorator[1]}`,
                         "",
-                        vscode.SymbolKind.Module,
+                        vscode.SymbolKind.Class,
                         new vscode.Range(i, 0, i, line.length),
                         new vscode.Range(i, 0, i, line.length),
                      );
@@ -35,7 +35,7 @@ export function activate(context: vscode.ExtensionContext) {
                         new vscode.DocumentSymbol(
                            child[1],
                            "",
-                           vscode.SymbolKind.Function,
+                           vscode.SymbolKind.Constructor,
                            new vscode.Range(i, 0, i, line.length),
                            new vscode.Range(i, 0, i, line.length),
                         ),
