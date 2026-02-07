@@ -1,0 +1,13 @@
+@skin
+MMD version 2.2
+    comment METRIX METAL DREAM - The legend returns
+    author  Sven Kistner (GFX and CODING)
+    email   kistner@metrix.de
+    homepage http://www.metrix.de
+
+
+
+
+@include 
+    bitmaps
+    player

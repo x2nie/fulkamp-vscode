@@ -1,0 +1,156 @@
+" ---------- BITMAP ATLAS ----------    # ← comment abu2
+
+@bitmap                             " ← decorator / struct (ungu / biru)
+vista/buttons.png                   " ← plain path (netral)
+    play.n   0   0  23 18              "  ← play.n warna identifier
+    play.h  23   0  23 18              "    angka = numeric
+    play.d  46   0  23 18
+
+@slider
+seekBar at 10 72 size 255 6
+  bind seek
+  track linear 180
+    #555 0
+    #222 100
+    rgba(4,45,9,.8) 100
+  progress #00ff9c
+  knob #ffffff
+
+
+" =========================
+" WebAmp Skin – Full Sample
+" =========================
+
+@window
+main at 0 0 size 275 116
+  title WebAmp
+  draggable
+
+" ---------- BITMAP ATLAS ----------
+
+@bitmap
+vista/buttons.png
+  play.n   0   0  23 18
+  play.h  23   0  23 18
+  play.d  46   0  23 18
+
+  pause.n 0  18  23 18
+  pause.h 23 18  23 18
+  pause.d 46 18  23 18
+
+  stop.n  0  36  23 18
+  stop.h  23 36  23 18
+  stop.d  46 36  23 18
+
+  ml.n    0  54  23 18
+  ml.h   23  54  23 18
+  ml.d   46  54  23 18
+
+" ---------- BACKGROUND PANEL ----------
+
+@panel
+background at 0 0 size 275 116
+  fill linear 180
+    #2a2a2a 0
+    #151515 100
+
+" ---------- TRANSPORT BUTTONS ----------
+
+@button
+btnPlay at 16 88
+  action play
+  image  play.n
+  hover  play.h
+  down   play.d
+  tip    Play
+
+btnPause at 39 88
+  action pause
+  image  pause.n
+  hover  pause.h
+  down   pause.d
+  tip    Pause
+
+btnStop at 62 88
+  action stop
+  image  stop.n
+  hover  stop.h
+  down   stop.d
+  tip    Stop
+
+" ---------- TOGGLE BUTTON ----------
+
+@togglebutton
+btnML at 245 88
+  toggle guid:ml
+  image  ml.n
+  hover  ml.h
+  down   ml.d
+  active ml.h
+  tip    Media Library
+
+" ---------- SLIDERS ----------
+
+@slider
+volSlider at 107 92 size 68 8
+  bind  volume
+  direction horizontal
+  track linear 0
+    #444 0
+    #222 100
+  knob #aaa
+
+balSlider at 107 104 size 68 6
+  bind balance
+  center
+  track #333
+  knob  #888
+
+" ---------- TEXT LABELS ----------
+
+@text
+txtTitle at 10 8 width 255
+  bind song.title
+  color #e0e0e0
+  shadow #000
+
+txtTime at 220 8
+  bind song.time
+  color #9aff9a
+
+" ---------- STATUS INDICATORS ----------
+" #region Component
+
+@indicator
+indRepeat at 10 104
+  bind repeat
+  on  #00ff00
+  off #003300
+
+indShuffle at 28 104
+  bind shuffle
+  on  #00ff00
+  off #003300
+
+" ---------- SEEK BAR ----------
+
+@slider
+seekBar at 10 72 size 255 6
+  bind seek
+  track linear 180
+    #555 0
+    #222 100
+  progress #00ff9c
+  knob #ffffff
+
+" ---------- VISUAL PLACEHOLDER ----------
+
+@panel
+visual at 10 24 size 255 40
+  fill linear 90
+    #000000 0
+    #101010 100
+
+" #endregion
+
+" ---------- END ----------
