@@ -1,0 +1,25 @@
+{
+  "name": "fulkamp",
+  "displayName": "FulkAmp",
+  "description": "Syntax highlighting for FulkAmp",
+  "version": "0.0.1",
+  "publisher": "x2nie",
+  "engines": { "vscode": "^1.80.0" },
+  "categories": ["Programming Languages"],
+  "contributes": {
+    "languages": [
+      {
+        "id": "fulkamp",
+        "aliases": ["FulkAmp", "fulkamp"],
+        "extensions": [".fa", ".fulkamp"]
+      }
+    ],
+    "grammars": [
+      {
+        "language": "fulkamp",
+        "scopeName": "source.fulkamp",
+        "path": "./syntaxes/fulkamp.tmLanguage.json"
+      }
+    ]
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "scopeName": "source.fulkamp",
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#decorators" },
+    { "include": "#functions" },
+    { "include": "#property-line" },
+    { "include": "#scalars" }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.number-sign.fulkamp",
+          "match": "#\\s+.*$"
+        }
+      ]
+    },
+
+    "decorators": {
+      "patterns": [
+        {
+            "name": "meta.function.decorator.fulkamp",
+            "begin": "^\\s*(@)([a-zA-Z_][\\w-]*)",
+            "beginCaptures": {
+                "1": {
+                "name": "keyword.operator.decorator.fulkamp"
+                },
+                "2": {
+                "name": "entity.name.function.decorator.fulkamp"
+                }
+            },
+            "end": "$"
+        }
+      ]
+    },
+
+    "functions": {
+      "patterns": [
+        {
+          "name": "meta.function-call.fulkamp",
+          "begin": "=",
+          "beginCaptures": {
+            "0": { "name": "keyword.operator.formula.fulkamp" }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "name": "entity.name.function.fulkamp",
+              "match": "\\b[A-Z_][A-Z0-9_]*\\b"
+            },
+            {
+              "include": "#scalars"
+            },
+            {
+              "name": "punctuation.parenthesis.fulkamp",
+              "match": "[(),]"
+            }
+          ]
+        }
+      ]
+    },
+
+    "property-line": {
+      "patterns": [
+        {
+          "name": "meta.property-line.fulkamp",
+          "begin": "^\\s*(?!@)([a-zA-Z_][\\w.-]*)",
+          "beginCaptures": {
+            "1": {
+              "name": "variable.other.property.fulkamp"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "name": "variable.parameter.function.fulkamp",
+              "match": "\\b.*\\b"
+            },
+            { "include": "#scalars" }
+          ]
+        }
+      ]
+    },
+
+    "scalars": {
+      "patterns": [
+        {
+          "name": "constant.numeric.fulkamp",
+          "match": "\\b\\d+(?:\\.\\d+)?\\b"
+        },
+        {
+          "name": "string.quoted.double.fulkamp",
+          "begin": "\"",
+          "end": "\""
+        },
+        {
+          "name": "constant.language.boolean.fulkamp",
+          "match": "\\b(true|false)\\b"
+        },
+        {
+          "name": "constant.language.null.fulkamp",
+          "match": "\\bnull\\b"
+        }
+      ]
+    }
+  }
+}
