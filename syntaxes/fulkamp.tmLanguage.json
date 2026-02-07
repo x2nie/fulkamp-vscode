@@ -3,6 +3,7 @@
   "patterns": [
     { "include": "#comments" },
     { "include": "#decorators" },
+    { "include": "#top_level_names" },
     { "include": "#functions" },
     { "include": "#property-line" },
     { "include": "#scalars" }
@@ -24,21 +25,20 @@
         }
       ]
     },
+    "top_level_names": {
+        "patterns": [
+            {
+            "name": "entity.name.function.fulkamp",
+            "match": "^(?!\\s)(?!@)(?!\")(\\S+)"
+            }
+        ]
+    },
 
     "decorators": {
       "patterns": [
         {
-            "name": "meta.function.decorator.fulkamp",
-            "begin": "^\\s*(@)([a-zA-Z_][\\w-]*)",
-            "beginCaptures": {
-                "1": {
-                "name": "keyword.operator.decorator.fulkamp"
-                },
-                "2": {
-                "name": "entity.name.function.decorator.fulkamp"
-                }
-            },
-            "end": "\\s"
+            "name": "storage.type.contract.fulkamp",
+            "match": "^\\s*(@[a-zA-Z_][\\w-]*)"
         }
       ]
     },
